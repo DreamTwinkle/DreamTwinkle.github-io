@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关于响应式布局的学习</title>
+	<style>
+     img.al{
+     	border: 2px solid black;
+     }
+     p.p{
+     	color: red;
+     }
+	</style>
+</head>
+<body>
+	<h1>什么是响应式布局？</h1>
+	<p>我个人的理解就是一种让网页可以适应各种不同屏幕大小或者分辨率的设备的办法</p>
+	<p>举个例子↓</p>
+    <img class="al" src="al1.jpg" alt="">
+    <img class="al" src="al2.jpg" alt="">
+	<p>这是同一个网页在两个不同大小的屏幕上显示的效果</p>
+	<h1>那么要如何实现呢？</h1>
+    <h2>（以下内容自runoob.com学习）</h2>
+    <h3>链接：<a href="http://www.runoob.com/bootstrap/bootstrap-v2-responsive-design.html">原网页</a></h3>
+    <h4>首先我们应当知道响应式布局的工作原理↓</h4>
+    <p>先检测设备的视口大小，然后加载合适的样式</p>
+    <p class="p">因此，我们需要创建一个包含适应各种设备尺寸样式的 CSS</p>
+    <p>（这里我引用了runoob.com提供的CSS文件，同样来自上面那个网址，放在下方供大家下载使用）</p>
+    <a href="bootstrap-responsive.css" download="bootstrap-responsive.css">点击下载CSS文件</a>
+    <p class="p">在我们的网页中引用这个CSS文件</p>
+    <p class="p">接下来，我们需要在网页的头部，也就是head标签里设置一个meta标签,案例↓，（通常都是这样设置的）</p>
+    <img src="al3.png" alt="">
+    <h4>说明</h4>
+    <p class="p">width是设置宽度用的，没什么好说，设置成device-width表示使用原始的分辨率</p>
+    <p class="p">initial-scale用来设置视口最初的比例。1.0表示设备的原始宽度</p>
+    <h2>如此一来，响应式布局便设置好了，如果你想要更加深入的学习，可以访问上方的原网页地址来查看更多资料（毕竟我只是个业余的）</h2>
+    <h3>顺便给大家推介一下runoob.com这个网页，我们专业要学习的科目上面都有相关的资料</h3>
+</body>
+</html>
