@@ -1,0 +1,42 @@
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.imgList{
+	max-width: 1200px;
+	margin: auto;
+}
+.imgList *{
+	box-sizing: border-box;
+}
+.imgList figure{
+	float: left;
+	width: 30%;
+	margin: calc(10%6);
+	overflow: hidden;
+    border: 10px solid #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,.5);
+    cursor: pointer;
+}
+.imgList figure figcaption{
+		position: absolute;	
+		left:20%;
+		right: ;	
+}
+.imgList figure img{
+	width: 100%;
+	vertical-align: top;
+	-webkit-transform: all .5s ease;
+	-moz-transform: all .5s ease;
+	-ms-transform: all .5s ease;
+	-o-transform: all .5s ease;
+	transform: all .5s ease;
+}
+.imgList figure:hover img{
+	-webkit-transform: scale(1.2) rotate(6deg);
+	-moz-transform: scale(1.2) rotate(6deg);
+	-ms-transform: scale(1.2) rotate(6deg);
+	-o-transform: scale(1.2) rotate(6deg);
+	transform: scale(1.2) rotate(6deg);
+}
