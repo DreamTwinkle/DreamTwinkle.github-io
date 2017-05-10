@@ -1,0 +1,30 @@
+body{
+	background-color: darkturquoise;
+}
+.formlist{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	text-align: center;
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5);
+	background-color: #fff;
+}
+.formlist input{
+	width: 75%;
+	line-height: 30px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+	border: 1px dashed lightblue;
+	text-align: center;
+	transition: all .3s;
+}
+.formlist input:hover{
+	border: 1px solid #DDDDDD;
+	box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.5);
+}
