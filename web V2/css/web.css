@@ -57,11 +57,48 @@ section li{
 	width: 150px;
 	height: 30px;
 	line-height: 30px;
-	background-color: rgba(9,113,224,.3);	
-	border-radius: 10px;
+	background-color: rgba(9,113,224,.3);
+	border-radius: 10px;	
 }
 section li:hover{
 	background-color: rgba(9,113,224,.6);
 	border-radius: 0px;
     transition: background .5s,border-radius .5s;
+}
+.work{
+	margin: 0;
+}
+.work figure{
+	float: left;
+	width: 30%;
+	margin: calc(10%/6);
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.work figure:hover img{
+	-webkit-filter: grayscale(0);
+}
+.work img{
+	max-height: 170px;
+	max-width: 323px;
+	width: 100%;
+	-webkit-filter: grayscale(.5);
+	transition: -webkit-filter .5s;
+}
+.work figure figcaption{
+	color: black;
+	width: 80px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	z-index: 0;
+	transition: .5s;
+}
+.work figure:hover figcaption{
+	z-index: 3;
 }
