@@ -3,11 +3,14 @@
 	display: table;
 	clear: both;
 }
+*{
+	box-sizing: border-box;
+}
 body{
 	color: #fff;
 	background: url(../img/back.jpg) no-repeat fixed;
 	min-height: 1200px;
-	background-size:100%;
+	background-size:cover;
 }
 .logo img{
 	width: 80px;
@@ -28,7 +31,7 @@ ul{
 	top: 0;
 }
 header nav ul li{
-	float: right;
+	float: left;
 	margin: 0px 50px;
 }
 header nav ul li a{
@@ -87,7 +90,7 @@ section li:hover{
 	transition: -webkit-filter .5s;
 }
 .work figure figcaption{
-	color: black;
+	color: white;
 	width: 80px;
 	height: 30px;
 	position: absolute;
@@ -101,4 +104,59 @@ section li:hover{
 }
 .work figure:hover figcaption{
 	z-index: 3;
+}
+.contactContainer dl dt{
+	padding:5px 20px;
+	background-color: #fff;
+	color: #000;
+	display: inline-block;
+}
+.contactContainer dl dd{
+	padding:5px 20px;
+	background-color: black;
+	color: #fff;
+	margin: 0px 30px 0px 0px;
+	display: inline-block;
+}
+.contact select{
+	width: 32%;
+	padding: 10px 16px;
+	border-radius: 3px;
+	margin: 5px 0px 5px 4px;
+}
+.contact input{
+	width: 31%;
+	margin: 5px 2% 5px 0px;
+	padding: 10px 16px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+}
+.contact textarea,
+.contact input[type="submit"]{
+	width: 31%;
+	height: 50px;
+	padding: 20px 16px;
+	border-radius: 3px;
+	margin: 5px 3% 5px 0px;
+	vertical-align: top;
+}
+.contact input[type="submit"]{
+	margin: 5px 0px;
+	border:none;
+	outline: none;
+	background-color: deepskyblue;
+	cursor: pointer;
+}
+#goTop{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	border: 1px solid #fff;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 0.8em;
+	color: #fff;
 }
