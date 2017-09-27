@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/css.css" />
+	</head>
+	<body>
+		<h1>抉择之泽</h1>
+		<div id="menu">
+			<h2>做出抉择吧！</h2>
+			<input type="button" class="easy" id="easy" value="凡人" />
+			<input type="button" class="medium" id="medium" value="英雄" />
+			<input type="button" class="hard" id="hard" value="神" />
+		</div>
+		<div id="page" style="display: none;">
+			<input type="text" id="num"  />
+			<button id="tijiao">提交</button>
+			<button id="chongzhi">重生</button>
+			<div id="times">命数：6</div>	
+			<div id="lishi">战绩：</div>
+			<button id="return">返回</button>
+		</div>
+		<script type="text/javascript">
+			var oeasy=document.getElementById('easy');
+			var omedium=document.getElementById('medium');
+			var ohard=document.getElementById('hard');
+			var k=6;
+			var omenu=document.getElementById('menu');
+			var opage=document.getElementById('page');
+			var onum=document.getElementById('num');
+			var otijiao=document.getElementById('tijiao');
+			var ochongzhi=document.getElementById('chongzhi');
+			var otimes=document.getElementById('times');
+			var olishi=document.getElementById('lishi');
+			var oreturn=document.getElementById('return');
+			var shu;
+			var sj;
+ 			
+			oeasy.addEventListener("click",clicka);
+			omedium.addEventListener("click",clickb);
+			ohard.addEventListener("click",clickc);
+			oreturn.addEventListener("click",clickd);
+			otijiao.addEventListener("click",clicke);
+			ochongzhi.addEventListener("click",clickf);
+			function clicka(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="在1-10之间做出抉择！";
+				shu=10;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickb(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="在1-50之间做出抉择！";
+				shu=50;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickc(){
+				omenu.style.display="none";
+				opage.style.display="block";
+				onum.placeholder="在1-100之间做出抉择！";
+				shu=100;
+				sj=parseInt(Math.random()*(shu+1));
+			}
+			function clickd(){
+				omenu.style.display="block";
+				opage.style.display="none";
+			}
+			function closegame(){
+				onum.disabled="true";
+				omenu.style.display="none";
+				opage.style.display="block";
+			}
+			function clicke(){
+				k--;
+				a=onum.value;
+				console.log(a);
+				if(isNaN(a)){
+				olishi.innerHTML+="你违反了规定！  ";
+				k++;
+				}
+				else if(a>sj&&k>0){
+					olishi.innerHTML+="嗯。。这次的决定有点冒险（偏大）  ";
+					otimes.innerHTML="剩余命数："+k;
+				}
+				else if(a<sj&&k>0){
+					olishi.innerHTML+="嗯。。这次的抉择有些保守（偏小）  ";
+					otimes.innerHTML="剩余命数："+k;
+				}
+				else if(a==sj&&k>0){
+					olishi.innerHTML+="你成功了！";
+					closegame();
+				}
+				else if(k==0){
+					olishi.innerHTML+="命数已尽！转世再来吧！";
+					otimes.innerHTML="剩余命数："+k;
+					closegame();
+				}
+			}
+			function clickf(){
+				sj=parseInt(Math.random()*(shu+1));
+				k=6;
+				onum.value="";
+				otimes.innerHTML="剩余命数：6";
+				olishi.innerHTML="战绩";
+				onum.disabled=false;
+			}
+		</script>
+	</body>
+</html>
