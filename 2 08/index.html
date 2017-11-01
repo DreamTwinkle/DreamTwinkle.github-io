@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>放大镜实现</title>
+		<style type="text/css">
+			#mask {
+				width: 400px;
+				position: absolute;
+				left: 500px;
+				top: 200px;
+				overflow: hidden;
+			}
+			
+			#mask #div1 {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: url(img/01.jpg) no-repeat;
+				border-radius: 100%;
+				top: 0px;
+				left: 0px;
+				margin-top: -50px;
+				margin-left: -50px;
+				pointer-events: none;
+				opacity: 0;
+			}
+			
+			#mask img {
+				width: 100%;
+			}
+			
+			#mask:hover #div1 {
+				opacity: 1;
+			}
+		</style>
+		<script type="text/javascript">
+		</script>
+
+	</head>
+
+	<body>
+		<div id="mask">
+			<img src="img/01.jpg" />
+			<div id="div1">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oDiv = document.getElementById("mask");
+			var odiv = document.getElementById("div1");
+			var oimg = oDiv.querySelector('img');
+			var radio;
+
+			oimg.addEventListener("load", function() {
+				radio = oimg.naturalWidth / oimg.width;
+				console.log(radio);
+			});
+
+			document.addEventListener("mousemove", function() {
+				var x = event.offsetX || event.layerX;
+				var y = event.offsetY || event.layerY;
+				odiv.style.top = y + "px";
+				odiv.style.left = x + "px";
+				odiv.style.backgroundPosition = ((-x * radio + 50) + "px " + (-y * radio) + "px");
+
+			});
+		</script>
+	</body>
+
+</html>
